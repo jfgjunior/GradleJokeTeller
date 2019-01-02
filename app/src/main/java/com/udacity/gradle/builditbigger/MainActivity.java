@@ -6,15 +6,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.example.jokedisplay.JokeActivity;
-import com.example.joketeller.JokeCreator;
 
 import static com.example.jokedisplay.JokeActivity.JOKE_EXTRA;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements OnJokeClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,11 +44,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void tellJoke(View view) {
-        String joke = JokeCreator.getJoke();
+        new EndpointsAsyncTask(this).execute();
+    }
+
+
+    @Override
+    public void startNewActivity(String joke) {
         Intent intent = new Intent(MainActivity.this, JokeActivity.class);
         intent.putExtra(JOKE_EXTRA, joke);
         startActivity(intent);
     }
-
-
 }
