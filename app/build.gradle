@@ -34,6 +34,19 @@ android {
             applicationIdSuffix ".debug"
         }
     }
+
+    flavorDimensions "pricing"
+    productFlavors {
+        paid {
+            dimension "pricing"
+            applicationIdSuffix ".paid"
+        }
+
+        free {
+            dimension "pricing"
+            applicationIdSuffix ".free"
+        }
+    }
 }
 
 dependencies {
