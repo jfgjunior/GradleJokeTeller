@@ -11,7 +11,6 @@ import com.example.jokedisplay.JokeActivity;
 
 import static com.example.jokedisplay.JokeActivity.JOKE_EXTRA;
 
-
 public class MainActivity extends AppCompatActivity implements OnJokeClickListener {
 
     @Override
