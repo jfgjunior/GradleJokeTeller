@@ -47,6 +47,10 @@ android {
             applicationIdSuffix ".free"
         }
     }
+    sourceSets {
+        free { java.srcDirs = ['src/free/java', 'src/free/java/'] } 
+        paid {java.srcDirs = ['src/paid/java', 'src/paid/java/'] }
+    }
 }
 
 dependencies {
