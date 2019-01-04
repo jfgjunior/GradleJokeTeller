@@ -46,7 +46,7 @@ public class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
                     getData();
         } catch (IOException e) {
             Log.e("error", e.getMessage(), e);
-            return e.getMessage();
+            return "";
         }
     }
 
