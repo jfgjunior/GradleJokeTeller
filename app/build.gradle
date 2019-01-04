@@ -40,11 +40,13 @@ android {
         paid {
             dimension "pricing"
             applicationIdSuffix ".paid"
+            applicationId "com.udacity.gradle.builditbigger.free"
         }
 
         free {
             dimension "pricing"
             applicationIdSuffix ".free"
+            applicationId "com.udacity.gradle.builditbigger.paid"
         }
     }
     sourceSets {
@@ -59,7 +61,7 @@ dependencies {
     implementation('com.android.support:appcompat-v7:27.1.1') {
         exclude module: 'guava-jdk5'
     }
-    implementation('com.google.android.gms:play-services-ads:17.1.2') {
+    freeImplementation('com.google.android.gms:play-services-ads:17.1.2') {
         exclude module: 'guava-jdk5'
     }
     implementation('com.google.api-client:google-api-client:1.23.0') {
